@@ -23,7 +23,7 @@ void InterruptTimerHandler(CanBus *dev_can)
 
 void InterruptCanHandler()
 {
-    // TODO too large for interruption content
+    // TODO #3 too large for interruption content
     devCanBus.HandleCanRxInterrupt();
 }
 
@@ -148,7 +148,7 @@ void CanBus::HandleCanRxInterrupt()
     {
         if (m_mcp2515.readMessage(MCP2515::RXB0, &frame) != MCP2515::ERROR_OK)
         {
-            // TODO remove prints from interrupt
+            // TODO #3 remove prints from interrupt
             Serial.println("Error during RXB0 message processing");
         }
     }
@@ -157,7 +157,7 @@ void CanBus::HandleCanRxInterrupt()
     {
         if (m_mcp2515.readMessage(MCP2515::RXB1, &frame) != MCP2515::ERROR_OK)
         {
-            // TODO remove prints from interrupt
+            // TODO #3 remove prints from interrupt
             Serial.println("Error during RXB1 message processing");
         }
     }

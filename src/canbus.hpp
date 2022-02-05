@@ -27,7 +27,7 @@ struct CanBusAutomationDesctiptor
     uint32_t periodTxMs;
 } __attribute__((packed));
 
-// TODO document methods
+// TODO #4 document methods
 class CanBus
 {
 private:
@@ -84,7 +84,7 @@ public:
                         uint8_t *d6_rx = nullptr,
                         uint8_t *d7_rx = nullptr);
 
-    // TODO implement periodic sending
+    // TODO #5 implement periodic sending
     // void SetDataToSend(uint32_t period_ms,
     //                    uint32_t rx_msg_id,
     //                    uint8_t *d0_tx = nullptr,
