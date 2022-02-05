@@ -142,7 +142,7 @@ bool CanBus::SetDataToStore(uint32_t rx_msg_id,
 void CanBus::HandleCanRxInterrupt()
 {
     uint8_t irq = m_mcp2515.getInterrupts();
-    can_frame frame;
+    can_frame frame = {0};
 
     if (irq & MCP2515::CANINTF_RX0IF)
     {
