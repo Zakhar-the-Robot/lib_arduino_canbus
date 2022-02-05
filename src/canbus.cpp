@@ -84,12 +84,7 @@ void CanBus::InitInterrupts()
 
     // timer
     ITimer1.init();
-    if (ITimer1.attachInterruptInterval(CAN_CLAIM_MS, InterruptTimerHandler, this))
-    {
-        Serial.print(F("Starting  ITimer1 OK, millis() = "));
-        Serial.println(millis());
-    }
-    else
+    if (!ITimer1.attachInterruptInterval(CAN_CLAIM_MS, InterruptTimerHandler, this))
     {
         Serial.println(F("Can't set ITimer1. Select another freq. or timer"));
     }
